@@ -57,6 +57,7 @@ from builtins import isinstance
 from socrata import Socrata
 from socrata.authorization import Authorization
 
+#Searches for matching GIS data, returns the match if found, search for the Content Owner with "Owner_Value"
 def webexsearch(mgis, title, owner_value, item_type_value, max_items_value=1000, inoutside=False):
     item_match = None
     search_result = mgis.content.search(query= "title:{} AND owner:{}".format(title, owner_value), 
@@ -72,7 +73,7 @@ def webexsearch(mgis, title, owner_value, item_type_value, max_items_value=1000,
             break
     return item_match
 
-#Search Layers
+#Search Layers and return matching layer if found
 def lyrsearch(lyrlist, lyrname):
     lyr_match = None
    
