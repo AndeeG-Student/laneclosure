@@ -266,6 +266,10 @@ def datemidnight(bdate):
     date0am = datetime.strptime(datetime.strftime(bdate,"%Y-%m-%d"),"%Y-%m-%d") + timedelta(hours=0)
     return date0am
 
+def datemidnight(bdate,x=0):
+    date0am = datetime.strptime(datetime.strftime(bdate,"%Y-%m-%d"),"%Y-%m-%d") + timedelta(hours=x)
+    return date0am
+
 #Returns whether or not closure date range is weekend or weekday
 def wkend(b,e):
     if b==0 and e <=1: 
